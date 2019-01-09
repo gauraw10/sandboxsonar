@@ -4,7 +4,7 @@ stage("Checkout SCM")
       stage("Build Code"){
         def mvnHomePath = tool name: 'my-maven-settings', type: 'maven'
       // Run the maven build
-      sh "sh "${mvnHomePath}/bin/mvn clean install"
+      sh "${mvnHomePath}/bin/mvn clean install"
       
       }
 stage("Sonar Scan"){
