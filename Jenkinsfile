@@ -2,11 +2,9 @@ node{
 stage("Checkout SCM")
       checkout scm
       stage("Build Code"){
-            withMaven(){
-   mvn help:effective-settings
-}
+        def mvnHomePath = tool name: 'my-maven-settings', type: 'maven'
       // Run the maven build
-      sh "mvn clean install"
+      sh "sh "${mvnHomePath}/bin/mvn clean install"
       
       }
 stage("Sonar Scan"){
