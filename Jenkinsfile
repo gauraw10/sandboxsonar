@@ -2,6 +2,9 @@ node{
 stage("Checkout SCM")
       checkout scm
       stage("Build Code"){
+            withMaven(){
+   mvn help:effective-settings
+}
       // Run the maven build
       sh "mvn clean install"
       
