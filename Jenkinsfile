@@ -10,6 +10,6 @@ stage("Checkout SCM")
 stage("Sonar Scan"){
       def sonar = tool name: 'sonar-test', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
       sonar = "${sonar}/bin/sonar-scanner"
-sh "${sonar} -Dsonar.projectKey=ct.sandbox.demo-jenkins -Dsonar.projectName=CT-SANDBOX-DEMO-JENKINS -Dsonar.login=cba169692841ff97e17973bbe991b741fe2f13f3 -Dsonar.host.url=http://192.168.0.10:9002"
+sh "${sonar} -Dsonar.projectKey=ct.sandbox.demo-jenkins -Dsonar.projectName=CT-SANDBOX-DEMO-JENKINS -Dsonar.sources=. -Dsonar.java.binaries=.-Dsonar.login=cba169692841ff97e17973bbe991b741fe2f13f3 -Dsonar.host.url=http://192.168.0.10:9002"
 }
 }
