@@ -2,8 +2,7 @@ node{
 stage("Checkout SCM")
       checkout scm
       stage("Build Code"){
-      def sonar = tool name: 'sonar-test', type: 'hudson.plugins.sonar.SonarRunnerInstallation'   
-    sh "${sonar} clean install"
+    sh "mvn clean install"
       }
 stage("Sonar Scan"){
       def sonar = tool name: 'sonar-test', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
