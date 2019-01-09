@@ -1,6 +1,5 @@
-node
-{
-stage("Checkout SCM"){
+node{
+stage("Checkout SCM")
       checkout scm
 stage("Build Code")
     sh mvn clean install
