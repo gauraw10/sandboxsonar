@@ -1,4 +1,4 @@
-node("docker_test"){
+node(){
 stage("Checkout SCM")
       checkout scm
 stage("Build Code"){
