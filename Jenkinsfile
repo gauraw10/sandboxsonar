@@ -1,7 +1,7 @@
 node{
 stage("Checkout SCM")
       checkout scm
-      stage("Build Code"){
+stage("Build Code"){
         def mvnHomePath = tool name: 'my-maven-settings', type: 'maven'
       // Run the maven build
       sh "${mvnHomePath}/bin/mvn clean install"
@@ -12,4 +12,7 @@ stage("Sonar Scan"){
       sonar = "${sonar}/bin/sonar-scanner"
 sh "${sonar} -Dsonar.projectKey=ct.sandbox.demo-jenkins -Dsonar.projectName=CT-SANDBOX-DEMO-JENKINS -Dsonar.sources=. -Dsonar.java.binaries=. -Dsonar.login=0bdf9d1061529704c494f3c3b2e478407a6a07bf -Dsonar.host.url=http://192.168.0.10:9002"
 }
+  stage("Build docker image"){
+        docker.build("sonar-sanbox")
+    }
 }
