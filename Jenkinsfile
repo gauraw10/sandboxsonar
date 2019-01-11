@@ -14,7 +14,7 @@ sh "${sonar} -Dsonar.projectKey=ct.sandbox.demo-jenkins -Dsonar.projectName=CT-S
 }
   stage("Build docker image"){
         def dockercmd = tool name: 'docker_test', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
-        sh "${dockercmd} docker build -t sonar-sanbox -f Dockerfile .
+        sh "${dockercmd} docker build -t sonar-sanbox -f Dockerfile ."
         //docker.build("sonar-sanbox")
     }
 }
