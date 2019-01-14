@@ -10,7 +10,7 @@ stage("Build Code"){
 stage("Sonar Scan"){
       def sonar = tool name: 'sonar-test', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
       sonar = "${sonar}/bin/sonar-scanner"
-sh "${sonar} -Dsonar.projectKey=ct.sandbox.demo.jenkins -Dsonar.projectName=CT-SANDBOX-DEMO-JENKINS -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.java.binaries=. -Dsonar.login=aeb08401174972caef84e79ba24da5a3d6769002 -Dsonar.host.url=https://staging.sonarqube.blue.azure.cdtapps.com"
+sh "${sonar} -Dsonar.projectKey=ct.sandbox.demo.jenkins -Dsonar.projectName=CT-SANDBOX-DEMO-JENKINS -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.java.binaries=. -Dsonar.login=..... -Dsonar.host.url=https://staging.sonarqube.blue.azure.cdtapps.com"
 }
  /*stage("Build docker image"){
         //def dockercmd = tool name: 'docker_test', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
